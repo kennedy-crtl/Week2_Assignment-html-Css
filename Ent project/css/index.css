@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f4f7fb;
+    --surface: #ffffff;
+    --surface-alt: #f8fbff;
+    --text: #1f2937;
+    --muted: #556577;
+    --accent: #1f63b5;
+    --accent-dark: #153a6b;
+    --border: #d2d8e6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+header {
+    background: var(--accent);
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-size: 1.9rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.9rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+nav a {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.hero,
+.featured,
+section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(31, 63, 104, 0.08);
+    margin-bottom: 2rem;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero img {
+    border-radius: 20px;
+    max-height: 420px;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+}
+
+.hero h2 {
+    font-size: clamp(2rem, 2.4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.featured h2,
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--surface-alt);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 16px 32px rgba(31, 63, 104, 0.08);
+    border: 1px solid rgba(209, 217, 230, 0.8);
+    text-align: center;
+}
+
+.card img {
+    border-radius: 18px;
+    height: 210px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-top: 0.75rem;
+    color: var(--accent-dark);
+}
+
+section img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+}
+
+section article {
+    background: var(--surface-alt);
+    padding: 1.25rem 1.5rem;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    margin-top: 1rem;
+}
+
+section article h3 {
+    margin-bottom: 0.75rem;
+}
+
+section article p {
+    color: var(--muted);
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 560px;
+    margin-top: 1rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #f8fbff;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+button {
+    width: max-content;
+    background: var(--accent);
+    color: #ffffff;
+    border: none;
+    padding: 0.95rem 1.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+footer {
+    background: var(--accent);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+    margin: 0 1rem 2rem;
+}
+
+footer p {
+    font-size: 0.95rem;
+}
+
+section a {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 900px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero,
+    .featured,
+    section {
+        padding: 1.5rem;
+    }
+
+    .course-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h2,
+    .featured h2,
+    section h2 {
+        font-size: 1.6rem;
+    }
+}
